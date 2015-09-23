@@ -12,3 +12,13 @@ Template.contacts.helpers({
 		return Contacts.find({});
 	}
 });
+
+Template.contacts.events({
+	'click .button-assertive': function(e) {
+		e.preventDefault();
+		Meteor.call('removeContact', this._id, function(error, result) {
+			if (error) alert(error.reason);
+		});
+		return;
+	}
+});
