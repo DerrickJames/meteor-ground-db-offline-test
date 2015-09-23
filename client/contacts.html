@@ -41,3 +41,33 @@
       {{/ionContent}}
   {{/ionView}}
 </template>
+
+<template name="contacts">
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">Contacts</h1>
+  {{/contentFor}}
+
+  {{#contentFor "headerButtonRight"}}
+    <a href="{{pathFor 'new'}}" class="button button-clear">{{> ionIcon icon="ios-plus-empty"}}</a>
+  {{/contentFor}}
+
+  {{#ionView}}
+      {{#ionContent}}
+          {{#if Template.subscriptionsReady}}
+            {{#ionList}}
+             {{#each contacts}}
+               {{#ionItem path="edit" buttonRight=true}}
+                  <h2>{{name}}</h2>
+                  <p>{{email}}</p>
+                  <button class="button button-assertive">
+                    {{> ionIcon icon="close-circled"}}
+                  </button>
+               {{/ionItem}}
+             {{/each}}
+            {{/ionList}}
+         {{else}}
+          {{> spinner}}
+         {{/if}}
+      {{/ionContent}}
+  {{/ionView}}
+</template>
