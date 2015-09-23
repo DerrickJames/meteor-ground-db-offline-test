@@ -25,3 +25,6 @@ meteoric:ionic-sass
 meteoric:ionicons-sass
 fourseven:scss
 ground:db
+iron:router
+ejson
+check
