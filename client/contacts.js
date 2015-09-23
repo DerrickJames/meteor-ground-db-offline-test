@@ -22,3 +22,12 @@ Template.contacts.events({
 		return;
 	}
 });
+
+Template.edit.onCreated(function() {
+	var self = this;
+	self.autorun(function() {
+		if ( Meteor.status().connected ) {
+      		Meteor.subscribe("contact", Router.current().params._id);
+    	}
+  	});
+});
