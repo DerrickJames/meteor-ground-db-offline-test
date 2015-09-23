@@ -6,3 +6,9 @@ Template.contacts.onCreated(function() {
     	};
   	});
 });
+
+Template.contacts.helpers({
+	'contacts': function() {
+		return Contacts.find({});
+	}
+});
