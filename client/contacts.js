@@ -49,3 +49,16 @@ AutoForm.hooks({
 		}
 	}
 });
+
+AutoForm.hooks({
+	editContactForm: {
+		onSubmit: function(insertDoc, updateDoc, currentDoc) {
+			var obj = {_id: Router.current().params._id, updateDoc: updateDoc};
+			Meteor.call('editContact', obj, function(error, result) {
+				if (error) alert(error.reason);
+			});
+			$(".back-button").click();
+			return false;
+		}
+	}
+});
