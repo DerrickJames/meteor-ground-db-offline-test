@@ -17,3 +17,5 @@ ContactsSchema = new SimpleSchema({
   }
 });
 
+Contacts = new Meteor.Collection('Contacts');
+
