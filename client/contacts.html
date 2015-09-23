@@ -24,3 +24,20 @@
       {{/ionContent}}
   {{/ionView}}
 </template>
+
+<template name="edit">
+    <div class="bar bar-header bar-positive">
+      {{>ionNavBackButton path="contacts" text="Back"}}
+      <div class="title">Edit Contact</div>
+    </div>
+
+  {{#ionView}}
+      {{#ionContent class="padding"}}
+        {{#if Template.subscriptionsReady}}
+          {{> quickForm schema="ContactsSchema" collection="Contacts" id="editContactForm" type="normal" doc=selectedDoc omitFields="createdAt, lastUpdated"}}
+        {{else}}
+          {{> spinner}}
+        {{/if}}
+      {{/ionContent}}
+  {{/ionView}}
+</template>
