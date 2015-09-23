@@ -37,3 +37,15 @@ Template.edit.helpers({
 		return Contacts.findOne(Router.current().params._id);
 	}
 });
+
+AutoForm.hooks({
+	insertContactForm: {
+		onSubmit: function(insertDoc) {
+			Meteor.call('addContact', insertDoc, function(error, result) {
+				if (error) alert(error.reason);
+			});
+			$(".back-button").click();
+			return false;
+		}
+	}
+});
