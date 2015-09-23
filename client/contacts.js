@@ -31,3 +31,9 @@ Template.edit.onCreated(function() {
     	}
   	});
 });
+
+Template.edit.helpers({
+	'selectedDoc': function() {
+		return Contacts.findOne(Router.current().params._id);
+	}
+});
