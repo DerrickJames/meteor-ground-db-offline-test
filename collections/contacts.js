@@ -26,6 +26,12 @@ Meteor.methods({
     check(doc, ContactsSchema);
     var obj = {name: doc.name, email: doc.email, createdAt: new Date};
     return Contacts.insert(obj);
+  },
+  editContact: function(obj) {
+    _.extend(obj.updateDoc.$set, {lastUpdated: new Date});
+    check(obj._id, String);
+    check(obj.updateDoc.$set, ContactsSchema);
+    return Contacts.update({_id: obj._id}, obj.updateDoc);
   }
 });
 
