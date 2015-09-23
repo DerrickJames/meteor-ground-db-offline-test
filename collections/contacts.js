@@ -21,3 +21,11 @@ Contacts = new Meteor.Collection('Contacts');
 
 if (Meteor.isCordova) Ground.Collection(Contacts);
 
+Meteor.methods({
+  addContact: function(doc) {
+    check(doc, ContactsSchema);
+    var obj = {name: doc.name, email: doc.email, createdAt: new Date};
+    return Contacts.insert(obj);
+  }
+});
+
