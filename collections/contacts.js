@@ -32,6 +32,10 @@ Meteor.methods({
     check(obj._id, String);
     check(obj.updateDoc.$set, ContactsSchema);
     return Contacts.update({_id: obj._id}, obj.updateDoc);
+  },
+  removeContact: function(id) {
+    check(id, String);
+    return Contacts.remove(id);
   }
 });
 
