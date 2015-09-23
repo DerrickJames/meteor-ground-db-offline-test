@@ -11,3 +11,16 @@
       {{/ionNavView}}
     {{/ionBody}}
 </template>
+
+<template name="new">
+  <div class="bar bar-header bar-positive">
+    {{>ionNavBackButton path="contacts" text="Back"}}
+    <div class="title">Edit Contact</div>
+  </div>
+
+  {{#ionView}}
+      {{#ionContent class="padding"}}
+          {{> quickForm schema="ContactsSchema" collection="Contacts" id="insertContactForm" type="normal" omitFields="createdAt, lastUpdated"}}
+      {{/ionContent}}
+  {{/ionView}}
+</template>
