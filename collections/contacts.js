@@ -39,3 +39,10 @@ Meteor.methods({
   }
 });
 
+if ( Meteor.isClient ) {
+  Ground.methodResume([
+      'addContact',
+      'editContact',
+      'removeContact'
+  ]);
+}
