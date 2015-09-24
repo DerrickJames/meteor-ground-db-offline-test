@@ -1,0 +1,1 @@
+{"version":3,"sources":["meteor://💻app/client/init.js"],"names":[],"mappings":";;;;;;;;AAAA,MAAM,CAAC,OAAO,CAAC,YAAY;AAC1B,KAAI,MAAM,CAAC,SAAS,EAAE,MAAM,CAAC,SAAS,CAAC,UAAU,CAAC,CAAC;CACnD,CAAC,CAAC,sE","file":"/client/init.js","sourcesContent":["Meteor.startup(function () {\n\tif (Meteor.isCordova) Meteor.subscribe(\"contacts\");\n});"]}

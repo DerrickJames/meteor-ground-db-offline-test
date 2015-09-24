@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height">
+  <meta name="msapplication-tap-highlight" content="no">
+
+  <link rel="stylesheet" type="text/css" class="__meteor-css__" href="/merged-stylesheets.css?93cc1f5a39f5a7429ceb45adb68c9928a8eec51b">
+
+  <script type="text/javascript">
+    __meteor_runtime_config__ = JSON.parse(decodeURIComponent("%7B%22meteorRelease%22%3A%22METEOR%401.2.0.1%22%2C%22ROOT_URL%22%3A%22http%3A%2F%2F154.122.168.68%3A3000%2F%22%2C%22ROOT_URL_PATH_PREFIX%22%3A%22%22%2C%22DDP_DEFAULT_CONNECTION_URL%22%3A%22http%3A%2F%2F154.122.168.68%3A3000%22%2C%22autoupdateVersionCordova%22%3A%221ebc4a7387dbbb9c55885523566f643654d1f338%22%2C%22appId%22%3A%2211b2pat15s0g5ik7jlwk%22%7D"));
+
+    if (/Android/i.test(navigator.userAgent)) {
+      // When Android app is emulated, it cannot connect to localhost,
+      // instead it should connect to 10.0.2.2
+      // (unless we're using an http proxy; then it works!)
+      if (!__meteor_runtime_config__.httpProxyPort) {
+        __meteor_runtime_config__.ROOT_URL = (__meteor_runtime_config__.ROOT_URL || '').replace(/localhost/i, '10.0.2.2');
+        __meteor_runtime_config__.DDP_DEFAULT_CONNECTION_URL = (__meteor_runtime_config__.DDP_DEFAULT_CONNECTION_URL || '').replace(/localhost/i, '10.0.2.2');
+      }
+    }
+  </script>
+
+  <script type="text/javascript" src="/cordova.js"></script>
+  <script type="text/javascript" src="/packages/es5-shim.js?da069a740053ff314c493840c24abbf31606a5b8"></script>
+  <script type="text/javascript" src="/packages/underscore.js?fa590de5090ceb4a42555b48562fd8f8e7035758"></script>
+  <script type="text/javascript" src="/packages/meteor.js?613eccae6562334b0007a6b2d3802a17c4ef75c2"></script>
+  <script type="text/javascript" src="/packages/meteor-base.js?f0836ed3757e6217fff6e2710a1293407a6d9b09"></script>
+  <script type="text/javascript" src="/packages/mobile-experience.js?674f55574f9947b91bb5f92f9ea9be098479b649"></script>
+  <script type="text/javascript" src="/packages/random.js?d48c6af563fc182146464d0e3935bf1385aafe1e"></script>
+  <script type="text/javascript" src="/packages/base64.js?52d94e9ee54ea51e35e9d410040454b9d9f9136a"></script>
+  <script type="text/javascript" src="/packages/ejson.js?6b2a6aad82b5a8eb6d5f26975783b243b6df124a"></script>
+  <script type="text/javascript" src="/packages/id-map.js?7ca7d36e6fea2952e28bf48090ce1c5c110df912"></script>
+  <script type="text/javascript" src="/packages/ordered-dict.js?2628d5d93b3386b11f2d072e1d70ea9644a0652a"></script>
+  <script type="text/javascript" src="/packages/tracker.js?16c53d4f91467c6a41bbb860bf6c48f871710022"></script>
+  <script type="text/javascript" src="/packages/mongo-id.js?86be8beb10a566185e04cb56b189a091ab8773c6"></script>
+  <script type="text/javascript" src="/packages/diff-sequence.js?693d4e99cb4a8884bd58c0da70e580fcf7fec2f0"></script>
+  <script type="text/javascript" src="/packages/geojson-utils.js?83d13d8f6fd1847ed97e71e73e2f55dc9165dadf"></script>
+  <script type="text/javascript" src="/packages/minimongo.js?70bd25f4cda85c5944ea3458d7b7d53ee4e3c297"></script>
+  <script type="text/javascript" src="/packages/check.js?fc9c23a3200accbea4c234c45664bd38c4ae2713"></script>
+  <script type="text/javascript" src="/packages/retry.js?cf00021132d94e73a330886b24df2373a3b209ab"></script>
+  <script type="text/javascript" src="/packages/ddp-common.js?23a845a08ff48730e7fbbbe941df509caa6b9b66"></script>
+  <script type="text/javascript" src="/packages/reload.js?4afcce286a1d3526c99dff17696bd42e70150db1"></script>
+  <script type="text/javascript" src="/packages/ddp-client.js?82da06d8e1ea6342d823b2c5c3be071e96108c70"></script>
+  <script type="text/javascript" src="/packages/ddp.js?1c935134013739ed5ece46880dea800b6319bd67"></script>
+  <script type="text/javascript" src="/packages/insecure.js?e7411f6cee07c76688e26c3b20767e857b42ad9f"></script>
+  <script type="text/javascript" src="/packages/ddp-server.js?1057b33d71942bc01fd0167e2b2a5f49f5545d11"></script>
+  <script type="text/javascript" src="/packages/mongo.js?5b282321f2f2144b0567849acd9711b5c51b234c"></script>
+  <script type="text/javascript" src="/packages/blaze-html-templates.js?31453f3129c01ec6fabaa5b791f6572e8c4464a2"></script>
+  <script type="text/javascript" src="/packages/reactive-dict.js?317d3394b36b5cc4148adffd807975ba2426d30f"></script>
+  <script type="text/javascript" src="/packages/session.js?0ae88e5e9f7b50b0047ade23a47a1a8dfa5874b9"></script>
+  <script type="text/javascript" src="/packages/jquery.js?bd30605bc9f8429d01bae2d29081902d10a6c400"></script>
+  <script type="text/javascript" src="/packages/standard-minifiers.js?b02a7937678c6058031ee7b2f45b5a617518335d"></script>
+  <script type="text/javascript" src="/packages/babel-compiler.js?b72b25550ee1619b0eaddf5e0c1541e8c264ccf0"></script>
+  <script type="text/javascript" src="/packages/ecmascript.js?9c79b20dd3f3a6da85828defdd8585b8436af75d"></script>
+  <script type="text/javascript" src="/packages/autopublish.js?c5edcae57ad2cf69f735706476fb86d91c1f1b0e"></script>
+  <script type="text/javascript" src="/packages/deps.js?a0f1fc18309813a3aac8954f76d0c73e4c5d46f4"></script>
+  <script type="text/javascript" src="/packages/aldeed_simple-schema.js?ef9e046f9fec6f73fb723934f2bda5ff552366ff"></script>
+  <script type="text/javascript" src="/packages/livedata.js?93f27626c1702ea8af804d6170ffbf8968626718"></script>
+  <script type="text/javascript" src="/packages/htmljs.js?02fcaaa6a72c008a5f618f8ec940eac2d240fc2c"></script>
+  <script type="text/javascript" src="/packages/observe-sequence.js?e0b5ec6321580efa20bf31f5a1ae4c52f05f38b5"></script>
+  <script type="text/javascript" src="/packages/reactive-var.js?b77e26d789bc6e0859202f67ea0934d68346450a"></script>
+  <script type="text/javascript" src="/packages/blaze.js?695c7798b7f4eebed3f8ce0cbb17c21748ff8ba8"></script>
+  <script type="text/javascript" src="/packages/spacebars.js?3eafdd2d5d5d8f08431aa842df4b5e8142600b17"></script>
+  <script type="text/javascript" src="/packages/templating.js?5db4914a80394b9530626a92ea3d0f235e44bea7"></script>
+  <script type="text/javascript" src="/packages/ui.js?6aa94fb4743be2472f799f928674607edae2afdf"></script>
+  <script type="text/javascript" src="/packages/momentjs_moment.js?4e38cbc4dc376eb002e586682f309a2b2d58561c"></script>
+  <script type="text/javascript" src="/packages/aldeed_autoform.js?8d8955f3aabfe2ab46c89e06e9d94100df40ae6d"></script>
+  <script type="text/javascript" src="/packages/fastclick.js?c46b68fa187b1c7491f675faa0cc56f3b2101510"></script>
+  <script type="text/javascript" src="/packages/iron_core.js?d1736948a39307f6fd63ab4df0181565b9d3f20f"></script>
+  <script type="text/javascript" src="/packages/iron_dynamic-template.js?ee3a82d9513d6672d735cd269e5a228a8adb9247"></script>
+  <script type="text/javascript" src="/packages/iron_layout.js?e780915e25c3eabb4e4cf232e4a5135d85f05020"></script>
+  <script type="text/javascript" src="/packages/iron_url.js?4bbef75bdd38d525f6031349de59822334832195"></script>
+  <script type="text/javascript" src="/packages/iron_middleware-stack.js?ff70621b6c5f6a406edc60600c4b76126dae21d6"></script>
+  <script type="text/javascript" src="/packages/iron_location.js?1652e97dc5ef338803fa388aef199fecd9426694"></script>
+  <script type="text/javascript" src="/packages/iron_controller.js?9d2e717544918c706f196546cf95012eaae0fb76"></script>
+  <script type="text/javascript" src="/packages/iron_router.js?dd5fa02859b6335661b94134bd9903be8eecf44d"></script>
+  <script type="text/javascript" src="/packages/meteoric_ionic.js?0d5f3c45dbd8d07e3d31ddeb3ab440279c0ec17f"></script>
+  <script type="text/javascript" src="/packages/meteoric_ionic-sass.js?075b7479f299619d15b63d32ce3d0e9891902af2"></script>
+  <script type="text/javascript" src="/packages/meteoric_ionicons-sass.js?b975c236a46a68ddea674e1c2329fc6c69e9e3ce"></script>
+  <script type="text/javascript" src="/packages/fourseven_scss.js?48fb4adc27f0e2b8be86e7252a3e8aadeeffff02"></script>
+  <script type="text/javascript" src="/packages/url.js?864ee208a94044db1a826d48600d22c150b368af"></script>
+  <script type="text/javascript" src="/packages/http.js?bbb7e492c5c1535078e3183f0980a565a3fbb0e6"></script>
+  <script type="text/javascript" src="/packages/autoupdate.js?395288ed784b7ffe3d2836d820a08ad2877543f5"></script>
+  <script type="text/javascript" src="/packages/meteor-platform.js?63da010bb09b6a8ff1e0b63346200aad1bd6182d"></script>
+  <script type="text/javascript" src="/packages/ground_dictionary.js?9897a115a707bafb45215eca6d75fded4214d4e9"></script>
+  <script type="text/javascript" src="/packages/ground_minimax.js?47a6e685db85c98ad90b4338a0047089cd0ebb73"></script>
+  <script type="text/javascript" src="/packages/ground_util.js?90a31f4db659e944de31836f481b97eb92ae46ed"></script>
+  <script type="text/javascript" src="/packages/ground_store.js?c130d20be5035780532bcefffec6001d9e4635ce"></script>
+  <script type="text/javascript" src="/packages/raix_eventemitter.js?9dbc8f21550d5b0e800bfa809850f28136f1deb6"></script>
+  <script type="text/javascript" src="/packages/ground_localstorage.js?c4c154e3e2897621d5832aa5ae093229362bf29a"></script>
+  <script type="text/javascript" src="/packages/ground_servertime.js?ad312a453a46679d4e87effafb76b705a41d7cda"></script>
+  <script type="text/javascript" src="/packages/raix_stubfence.js?0bb8b7c2d16b235ef7ab62e92bae5948da8e2097"></script>
+  <script type="text/javascript" src="/packages/raix_onetimeout.js?a4a4f01ee884cc62f854c29bd0664a4a303c5c6c"></script>
+  <script type="text/javascript" src="/packages/dispatch_request-animation-frame.js?d31096e5ec268b4e5a3f6eed620365d495b3fcd7"></script>
+  <script type="text/javascript" src="/packages/dispatch_kernel.js?579950952e425341d8190d119e9f2ae046a5bdc1"></script>
+  <script type="text/javascript" src="/packages/webapp.js?ba2db8eb3207813c575b828e42663552e89d359e"></script>
+  <script type="text/javascript" src="/packages/logging.js?43583146e828f59f9b9e554f3045f004fc881d94"></script>
+  <script type="text/javascript" src="/packages/mobile-status-bar.js?93ea41a7f26014b58108322969c0d57188fb9418"></script>
+  <script type="text/javascript" src="/packages/launch-screen.js?bd3549f63c393378eba3c8a2aa55a2939397353f"></script>
+  <script type="text/javascript" src="/packages/ground_db.js?c351d7f5b9b1dff58fc14f0a89ba351f8633ed49"></script>
+  <script type="text/javascript" src="/packages/hot-code-push.js?3916ae26c3ca4928e61dc2da7e7b3f93e4164c0c"></script>
+  <script type="text/javascript" src="/packages/babel-runtime.js?2b4e3aad8a693643f77952e1b8431f625bca2038"></script>
+  <script type="text/javascript" src="/packages/promise.js?6647662ba8dfb4a04dfa4bb9123f82c635d280ca"></script>
+  <script type="text/javascript" src="/packages/ecmascript-collections.js?c8e0f185d7d34832e4c31c682b0975168b81e8f9"></script>
+  <script type="text/javascript" src="/packages/global-imports.js?c595e46f1255b799bd756b5274abf5571cc86a5f"></script>
+  <script type="text/javascript" src="/app/client/contacts.compiled.html.js?4a23b9be13610a7220cf220dd2ebf4eb6ae22d9d"></script>
+  <script type="text/javascript" src="/app/lib/router.js?c8159b64de0d466bb4b79f9cf5875b34843f1985"></script>
+  <script type="text/javascript" src="/app/client/contacts.js?5c8a05c5ab28a8203de47ffd9d5aa8f79ae564f3"></script>
+  <script type="text/javascript" src="/app/client/init.js?761fbed3b334f799a12f955eb9605496de2a3408"></script>
+  <script type="text/javascript" src="/app/collections/contacts.js?bbf7b99d4dd069214163a064b7e3bdc5890606be"></script>
+
+
+  <title>Offline App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+</head>
+
+<body>
+  
+</body>
+</html>

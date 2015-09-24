@@ -1,0 +1,33 @@
+{
+  "format": "site-archive-pre1",
+  "builtBy": "Meteor METEOR@1.2.0.1",
+  "programs": [
+    {
+      "name": "web.browser",
+      "arch": "web.browser",
+      "path": "programs/web.browser/program.json"
+    },
+    {
+      "name": "web.cordova",
+      "arch": "web.cordova",
+      "path": "programs/web.cordova/program.json",
+      "cordovaDependencies": {
+        "com.ionic.keyboard": "1.0.4",
+        "cordova-plugin-file": "2.1.0",
+        "cordova-plugin-file-transfer": "1.2.0",
+        "cordova-plugin-device": "1.0.1",
+        "cordova-plugin-legacy-whitelist": "1.1.0",
+        "com.meteor.cordova-update": "https://github.com/meteor/com.meteor.cordova-update.git#16c53f53e438fc8b1b9c768de36f0a8974e38b49",
+        "cordova-plugin-console": "1.0.1",
+        "cordova-plugin-statusbar": "1.0.0",
+        "cordova-plugin-splashscreen": "2.1.0"
+      }
+    },
+    {
+      "name": "server",
+      "arch": "os",
+      "path": "programs/server/boot.js"
+    }
+  ],
+  "meteorRelease": "METEOR@1.2.0.1"
+}
